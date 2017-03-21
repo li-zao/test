@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<title></title>
+<head>
+	<include file="Public/css" />
+</head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<body>
+	<div class="container-fluid">
+		<include file="Public/nav" />
+		<div class="row-fluid">
+			<div class="span12">
+				<form action="<?php echo U('index/upload');?>" enctype="multipart/form-data" method="post" >
+					<!-- <input type="text" name="name" /> -->
+					<br>
+					<input type="file" name="photo" />
+					<br>
+					<input type="submit" value="提交" class="btn btn-info">
+					<br>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

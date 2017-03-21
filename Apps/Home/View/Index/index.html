@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+	<title></title>
+	<head>
+		<include file="Public/css" />
+	</head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<body>
+
+		<div class="container-fluid">
+		<include file="Public/nav" />
+		<div class="row-fluid">
+			<div class="span12">
+				 <!-- <button class="btn" type="button">按钮</button> -->
+				 <!-- <a href="<?php echo U('index/uploadFile');?>" class="btn btn-primary " role="button">上传文件</a> -->
+			</div>
+		</div>
+		<br>
+		<div class="row-fluid">
+			<div class="span12">
+				<table class="table table-bordered">
+					<thead>
+						<tr>
+							<th>编号</th>
+							<th>名称</th>
+							<th>数量</th>
+							<th>状态</th>
+							<th>次数</th>
+							<th>链接</th>
+							<th>备注</th>
+						</tr>
+					</thead>
+					<tbody>
+						<if condition="isset($list)">
+							<volist name="list" id="data">
+								<tr>
+									<td>{$data.id}</td>
+									<td>{$data.name}</td>
+									<td>{$data.num}</td>
+									<td>{$data.status}</td>
+									<td>{$data.download}</td>
+									<td>
+										<if condition="$data['status'] eq '完成'">
+											<a href="http://172.18.19.141/batch_download.php?name={$data.name}&id={$data.id}">下载</a>
+										</if>
+									</td>
+									<td>{$data.remark}</td>
+								</tr>
+							</volist>
+						</if>
+					</tbody>
+				</table>
+				<notempty name="show">
+				    <div class="panel panel-default" style="margin:0 20px">
+				        <div class="panel-body">
+				            <div class="btn-group" style="float:right;">
+				                <div style=" float:right;">{$show}</div>
+				            </div>
+				        </div>
+				    </div>
+				</notempty>
+			</div>
+		</div>
+		</div>
+	</body>
+</html>
