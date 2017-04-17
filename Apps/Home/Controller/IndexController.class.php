@@ -84,4 +84,9 @@ class IndexController extends Controller {
         fclose($fp);
         return $i;
     }
+
+    public function test()
+    {
+        return 'this is a test of git;';
+    }
 }
